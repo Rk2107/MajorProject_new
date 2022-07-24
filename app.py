@@ -66,7 +66,7 @@ reload_model = joblib.load('Restaurant Review')
 reload_model = joblib.load('Restaurant Review')  
 
 st.title("POSITIVE AND NEGATIVE REVIEW CLASSIFICATION")
-st.write("USING PIPELINE MODELS")
+#st.write("USING PIPELINE MODELS")
 input = st.text_input("Enter your message:") 
 
 #predict if the entered review is positive or negative
