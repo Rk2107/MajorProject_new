@@ -18,7 +18,7 @@ x = df['Review'].values
 y = df['Liked'].values
 
 #using train_test_split to train model
-x_train,x_test,y_train,y_test = train_test_split(x,y,random_state=0)
+x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2,random_state=43)
 
 vect = CountVectorizer(stop_words = 'english')
 x_train_vect = vect.fit_transform(x_train) 
@@ -54,10 +54,10 @@ model4.fit(x_train,y_train)
 y_pred4 = model4.predict(x_test)
 accuracy_score(y_pred4,y_test)
 
-# ACCURACY FOR SVC - 72%
-# SVC PIPELINE - 79.2 % 
-# ACCURACY FOR MultinomialNB - 74.4%
-# MultinomialNB PIPELINE - 78.4 %
+# ACCURACY FOR SVC - 77%
+# SVC PIPELINE - 80.5 % 
+# ACCURACY FOR MultinomialNB - 79.5%
+# MultinomialNB PIPELINE - 84 %
 
 # using joblib to save pipeline model with highest accuracy
 joblib.dump(model2,'Restaurant Review')
@@ -74,4 +74,4 @@ input = st.text_input("Enter your message:")
 output = reload_model.predict([input])  
 if st.button('PREDICT'): 
   if output[0] == 1:  st.title("Positive")
-  else: st.title("Negetive")
+  else: st.title("Negative")
