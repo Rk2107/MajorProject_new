@@ -60,7 +60,7 @@ accuracy_score(y_pred4,y_test)
 # MultinomialNB PIPELINE - 84 %
 
 # using joblib to save pipeline model with highest accuracy
-joblib.dump(model2,'Restaurant Review')
+joblib.dump(model4,'Restaurant Review')
 reload_model = joblib.load('Restaurant Review')
 
 reload_model = joblib.load('Restaurant Review')  
